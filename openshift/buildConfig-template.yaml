@@ -57,6 +57,10 @@ objects:
         - type: ConfigChange
         - type: ImageChange
           imageChange: {}
+        - type: Generic
+          generic:
+            secret: ${SECRET_GENERIC}
+            allowEnv: false
 
 parameters:
   - description: Name of the GitHub repository for Amun API
@@ -70,6 +74,11 @@ parameters:
     required: true
     name: GITHUB_REF
     value: 'master'
+
+  - description: Generic secret used by the openshift
+    displayName: Generic Secret
+    required: true
+    name: SECRET_GENERIC
 
   - description: >
       Tag of the output ImageStream the resulting container image should go to
